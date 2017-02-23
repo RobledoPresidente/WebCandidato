@@ -1,0 +1,115 @@
+@import "app/lib/bootstrap/scss/bootstrap";
+
+$primary: #FFD600 !default;
+
+body { padding-top: 70px; }
+
+.card {
+    border: none;
+    border-radius: 0;
+    background-size: cover;
+    background-position: center center;
+
+    &.card-inverse {
+
+        .card-text {
+            color: rgba(255,255,255,.9);
+
+             .text-muted {
+                 color: rgba(255,255,255,.7) !important;
+             }
+        }
+
+        .card-img-overlay {
+            background-color: rgba(0,0,0,.3);
+        }
+    }
+}
+
+h2 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid lightgrey; 
+    line-height: 0.4em;
+    margin: 60px 0 70px; 
+
+    span { 
+        background:#fff; 
+        padding:0 10px; 
+        font-weight: 400;
+    }
+}
+
+.social-icons img {
+    width: 32px;
+    
+    .yellow {
+        color: $primary;
+    }
+}
+
+.highlights {
+
+    > div {
+
+        &:first-child {
+
+            .card-title {
+                font-size: 64px;
+                font-weight: lighter;
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: $primary;
+
+            .card {
+                background: transparent;
+                height: 100%;
+
+                h4.card-title {
+                    font-size: 45px;
+                    text-transform: uppercase;
+                    font-family: 'Fjalla One', sans-serif;
+                }
+
+                h5.card-title {
+                    color: #333;
+                    font-size: 30px;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        &:last-child {
+
+            .card {
+
+                .card-title {
+                    font-size: 40px;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        .card {
+            height: 400px;
+
+            .card-content {
+                
+                position: absolute;
+                padding: 1.25rem;
+
+                &.bottom {
+                    bottom: 0;
+                    left: 0;
+                }
+
+                &.middle {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
