@@ -6001,53 +6001,62 @@ body {
       color: rgba(255, 255, 255, 0.7) !important; }
   .card.card-inverse .card-img-overlay {
     background-color: rgba(0, 0, 0, 0.3); }
+  .card.card-inverse .card-title {
+    word-break: break-all; }
+  .card.card-inverse .card-content {
+    position: absolute;
+    padding: 1.25rem; }
+    .card.card-inverse .card-content.bottom {
+      bottom: 0;
+      left: 0; }
+    .card.card-inverse .card-content.middle {
+      top: 50%;
+      transform: translateY(-50%); }
 
 h2 {
   width: 100%;
   text-align: center;
   border-bottom: 1px solid lightgrey;
-  line-height: 0.4em;
+  line-height: 14px;
   margin: 60px 0 70px; }
   h2 span {
     background: #fff;
     padding: 0 10px;
-    font-weight: 400; }
+    font-weight: lighter;
+    font-size: 20px;
+    color: lightgrey; }
 
 .social-icons img {
   width: 32px; }
   .social-icons img .yellow {
     color: #FFD600; }
 
-.highlights > div:first-child .card-title {
-  font-size: 64px;
-  font-weight: lighter; }
-
-.highlights > div:nth-child(2) {
-  background-color: #FFD600; }
-  .highlights > div:nth-child(2) .card {
-    background: transparent;
-    height: 100%; }
-    .highlights > div:nth-child(2) .card h4.card-title {
-      font-size: 45px;
-      text-transform: uppercase;
-      font-family: 'Fjalla One', sans-serif; }
-    .highlights > div:nth-child(2) .card h5.card-title {
-      color: #333;
-      font-size: 30px;
-      font-weight: lighter; }
-
-.highlights > div:last-child .card .card-title {
-  font-size: 40px;
-  font-weight: lighter; }
-
-.highlights > div .card {
-  height: 400px; }
-  .highlights > div .card .card-content {
-    position: absolute;
-    padding: 1.25rem; }
-    .highlights > div .card .card-content.bottom {
-      bottom: 0;
-      left: 0; }
-    .highlights > div .card .card-content.middle {
-      top: 50%;
-      transform: translateY(-50%); }
+.highlights > div {
+  padding: 15px; }
+  .highlights > div .card {
+    height: 400px; }
+  .highlights > div:first-child .card-title {
+    font-size: 64px;
+    font-weight: lighter; }
+  .highlights > div:nth-child(2) {
+    background-color: #FFD600; }
+    .highlights > div:nth-child(2) .card {
+      background: transparent;
+      height: 100%; }
+      .highlights > div:nth-child(2) .card h4.card-title {
+        font-size: 45px;
+        text-transform: uppercase;
+        font-family: 'Fjalla One', sans-serif; }
+      .highlights > div:nth-child(2) .card h5.card-title {
+        color: #333;
+        font-size: 30px;
+        font-weight: lighter; }
+      @media (max-width: 575px) {
+        .highlights > div:nth-child(2) .card .card-content {
+          position: initial; }
+          .highlights > div:nth-child(2) .card .card-content.middle {
+            top: initial;
+            transform: initial; } }
+  .highlights > div:last-child .card .card-title {
+    font-size: 40px;
+    font-weight: lighter; }

@@ -23,6 +23,26 @@ body { padding-top: 70px; }
         .card-img-overlay {
             background-color: rgba(0,0,0,.3);
         }
+
+        .card-title {
+            word-break: break-all;
+        }
+
+        .card-content {
+            
+            position: absolute;
+            padding: 1.25rem;
+
+            &.bottom {
+                bottom: 0;
+                left: 0;
+            }
+
+            &.middle {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
     }
 }
 
@@ -30,13 +50,15 @@ h2 {
     width: 100%; 
     text-align: center; 
     border-bottom: 1px solid lightgrey; 
-    line-height: 0.4em;
+    line-height: 14px;
     margin: 60px 0 70px; 
 
     span { 
         background:#fff; 
         padding:0 10px; 
-        font-weight: 400;
+        font-weight: lighter;
+        font-size: 20px;
+        color: lightgrey;
     }
 }
 
@@ -51,6 +73,11 @@ h2 {
 .highlights {
 
     > div {
+        padding: 15px;
+
+        .card {
+            height: 400px;
+        }
 
         &:first-child {
 
@@ -78,6 +105,19 @@ h2 {
                     font-size: 30px;
                     font-weight: lighter;
                 }
+
+                @include media-breakpoint-down(xs) {
+
+                    .card-content {
+                        
+                        position: initial;
+
+                        &.middle {
+                            top: initial;
+                            transform: initial;
+                        }
+                    }
+                }
             }
         }
 
@@ -88,26 +128,6 @@ h2 {
                 .card-title {
                     font-size: 40px;
                     font-weight: lighter;
-                }
-            }
-        }
-
-        .card {
-            height: 400px;
-
-            .card-content {
-                
-                position: absolute;
-                padding: 1.25rem;
-
-                &.bottom {
-                    bottom: 0;
-                    left: 0;
-                }
-
-                &.middle {
-                    top: 50%;
-                    transform: translateY(-50%);
                 }
             }
         }
