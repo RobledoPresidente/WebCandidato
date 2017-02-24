@@ -1,12 +1,32 @@
-@import "app/lib/bootstrap/scss/bootstrap";
+//Bootstrap variables overrides
 
-$primary: #FFD600 !default;
+$brand-primary: #FFD600;
+$brand-calm: #F2F2F2;
+
+$border-radius: 0;
+$card-border-width: 0;
+$input-btn-border-width: 2px;
+
+//Custom variables
+$brand-secondary: #3FA9F5;
+$brand-tertiary: #FF1D25;
+$font-secondary: 'Fjalla One', sans-serif;
+
+@import "app/lib/components-font-awesome/scss/font-awesome";
+@import "app/lib/bootstrap/scss/bootstrap";
 
 body { padding-top: 70px; }
 
+//Boostrap customizations
+
+.col, [class*="col-"] {
+
+    &.no-gutters {
+        padding: 0;
+    }
+}
+
 .card {
-    border: none;
-    border-radius: 0;
     background-size: cover;
     background-position: center center;
 
@@ -25,7 +45,7 @@ body { padding-top: 70px; }
         }
 
         .card-title {
-            word-break: break-all;
+            word-break: break-word;
         }
 
         .card-content {
@@ -43,15 +63,54 @@ body { padding-top: 70px; }
                 transform: translateY(-50%);
             }
         }
+
+        &.card-secondary {
+            background-color: $brand-secondary;
+        }
+
+        &.card-tertiary {
+            background-color: $brand-tertiary;
+        }
+    }
+
+    &.card-calm {
+        background-color: $brand-calm;
     }
 }
 
-h2 {
+textarea.form-control {
+    background-color: transparent;
+
+    &:focus {
+        background-color: white;
+    }
+}
+
+.list-group-item-action.bg-inverse {
+    color: $brand-calm;
+}
+
+//Custom styles
+
+.bg-secondary {
+    background-color: $brand-secondary;
+}
+.bg-tertiary {
+    background-color: $brand-tertiary;
+}
+.text-secondary {
+    color: $brand-secondary;
+}
+.text-tertiary {
+    color: $brand-tertiary;
+}
+
+.section > h2 {
     width: 100%; 
     text-align: center; 
     border-bottom: 1px solid lightgrey; 
     line-height: 14px;
-    margin: 60px 0 70px; 
+    margin: 3rem 0 4rem; 
 
     span { 
         background:#fff; 
@@ -62,12 +121,12 @@ h2 {
     }
 }
 
+.font-secondary {
+    font-family: $font-secondary;
+}
+
 .social-icons img {
     width: 32px;
-    
-    .yellow {
-        color: $primary;
-    }
 }
 
 .highlights {
@@ -88,16 +147,13 @@ h2 {
         }
 
         &:nth-child(2) {
-            background-color: $primary;
 
             .card {
-                background: transparent;
                 height: 100%;
 
                 h4.card-title {
                     font-size: 45px;
-                    text-transform: uppercase;
-                    font-family: 'Fjalla One', sans-serif;
+                    font-family: $font-secondary;
                 }
 
                 h5.card-title {
