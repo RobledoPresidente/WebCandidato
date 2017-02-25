@@ -12,6 +12,9 @@ $brand-secondary: #3FA9F5;
 $brand-tertiary: #FF1D25;
 $font-secondary: 'Fjalla One', sans-serif;
 
+// The path for our ionicons font files, relative to the built CSS in www/css
+$fa-font-path: "../lib/components-font-awesome/fonts" !default;
+
 @import "app/lib/components-font-awesome/scss/font-awesome";
 @import "app/lib/bootstrap/scss/bootstrap";
 
