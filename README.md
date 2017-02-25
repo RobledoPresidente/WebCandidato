@@ -14,6 +14,8 @@ Este proyecto está desarrollado con tecnología Web de punta. Usamos el framewo
 ###Prerrequisitos
 
 1. Tener instalado nodejs
+2. Tener instalado gulp globalmente `npm i -g gulp` (en sistemas linux y osx puede requerir privilegios elevados, es edcir, ejecutarlo con sudo)
+3. Tener instalado bower globalmente `npm i -g bower` (en sistemas linux y osx puede requerir privilegios elevados, es edcir, ejecutarlo con sudo)
 
 ###Preparar ambiente
 
