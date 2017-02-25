@@ -2,7 +2,7 @@
 
 #Cómo contruibuir
 
-1. Ponte en contacto con nosotros (sebastian.rojas.ricaurte@gmail.com)
+1. Ponte en contacto con nosotros (+57 3006609565 o sebastian.rojas.ricaurte@gmail.com)
 2. Desarrolla
 3. Envía un Pull Request
 
