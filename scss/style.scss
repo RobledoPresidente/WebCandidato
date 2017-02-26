@@ -18,8 +18,6 @@ $fa-font-path: "../lib/components-font-awesome/fonts" !default;
 @import "app/lib/components-font-awesome/scss/font-awesome";
 @import "app/lib/bootstrap/scss/bootstrap";
 
-body { padding-top: 70px; }
-
 //Boostrap customizations
 
 .card {
@@ -99,8 +97,6 @@ textarea.form-control {
     color: $brand-calm;
 }
 
-//Custom styles
-
 .bg-secondary {
     background-color: $brand-secondary !important;
 }
@@ -139,6 +135,74 @@ textarea.form-control {
 
 .font-secondary {
     font-family: $font-secondary;
+}
+
+//Custom styles
+
+body {
+    padding-top: 20vw;
+}
+
+#main {
+    margin-top: 86px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.4s ease;
+
+    #header-img {
+        background-image: url(../img/header.png);
+        height: 20vw;
+        position: relative;
+
+        img.biglogo {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%)
+        }
+    }
+
+    .navbar {
+        background-color: white;
+        background-image: url(../img/header-line.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding-top: 1rem;
+
+        .navbar-brand { 
+            display: none;
+        }
+    }
+
+    .social {
+        
+        img {
+            width: 3vw;
+
+            &:hover {
+                width: 3.5vw;
+            }
+        }
+    }
+
+    &.sticky {
+        transition: all 0.4s ease;
+
+        .navbar-brand { 
+            display: initial;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
 }
 
 .social-icons img {

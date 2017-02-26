@@ -23,32 +23,65 @@
   }(document, 'script', 'facebook-jssdk'));</script>
   <!---->
   <!--Header-->
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">Navbar</a>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+  <header>
+    <div id="header-img">
+      <a href="/"><img class="biglogo" src="img/logo.png"></a>
     </div>
-  </nav>
+    <nav class="navbar navbar-toggleable-md navbar-light">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo-s.png"></a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">conózcalo <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">biblioteca</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">prensa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">voluntarios</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav social">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-facebook.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-twitter.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-instagram.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-snapchat.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-youtube.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-soundcloud.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-google+.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-linkedin.png"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
   <!--End Header-->
-  <div class="container-fluid">
+  <div class="container-fluid" id="main">
     <div class="section">
       <h2><span>primera plana</span></h2>
       <div class="row highlights">
@@ -297,36 +330,9 @@
       </div>
     </footer>
     <script src="lib/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="lib/bootstrap/dist/js/boostrap.min.js" type="text/javascript"></script>
     <script src="lib/ImageMapster/dist/jquery.imagemapster.js" type="text/javascript"></script>
-    <script>
-      $(function () {
-
-        $('#colombia').mapster('unbind').mapster({
-          clickNavigate: true,
-          render_highlight: {
-            altImageOpacity: 1,
-            fillOpacity: 1,
-            fillColor: 'ffffff',
-            altImage: 'img/map-highlight.png',
-            fadeDuration: 100
-          },
-          mapKey: 'data-key',
-          areas: [
-          {
-            key: 'north',
-            isSelectable: false
-          },
-          {
-            key: 'center',
-            isSelectable: false
-          },
-          {
-            key: 'south',
-            isSelectable: false
-          }]
-        });
-      })
-    </script>
+    <script src="js/home.js" type="text/javascript"></script>    
 </body>
 
 </html>
