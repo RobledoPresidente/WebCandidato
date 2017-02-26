@@ -17,6 +17,7 @@ $fa-font-path: "../lib/components-font-awesome/fonts" !default;
 
 @import "app/lib/components-font-awesome/scss/font-awesome";
 @import "app/lib/bootstrap/scss/bootstrap";
+@import "fonts";
 
 //Boostrap customizations
 
@@ -141,6 +142,24 @@ textarea.form-control {
 
 body {
     padding-top: 20vw;
+
+    &.sticky {
+        padding-top: 8vw;
+
+        header {
+            transition: all 0.4s ease;
+             border-bottom: 1px solid $brand-calm;
+
+            .navbar-brand { 
+                display: initial;
+                padding: 0;
+
+                img {
+                    height: 5vw;
+                }
+            }
+        }
+    }
 }
 
 #main {
@@ -152,10 +171,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    transition: all 0.4s ease;
+    z-index: 1;
+    transition: all 0.4s ease;    
 
     #header-img {
         background-image: url(../img/header.png);
+        background-position: center center;
         height: 20vw;
         position: relative;
 
@@ -187,19 +208,7 @@ header {
             width: 3vw;
 
             &:hover {
-                width: 3.5vw;
-            }
-        }
-    }
-
-    &.sticky {
-        transition: all 0.4s ease;
-
-        .navbar-brand { 
-            display: initial;
-
-            img {
-                height: 100%;
+                width: 3.2vw;
             }
         }
     }

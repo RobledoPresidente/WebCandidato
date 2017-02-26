@@ -4,12 +4,12 @@ $(function () {
 
         if ($(this).scrollTop() > 1) {
             
-            $('header').addClass("sticky");
-            $('#header-img').slideDown('slow');
+            $('body').addClass("sticky");
+            $('#header-img').slideUp('slow');
         }
         else {
-            $('header').removeClass("sticky");
-            $('#header-img').slideUp('slow');
+            $('body').removeClass("sticky");
+            $('#header-img').slideDown('slow');
         }
     });
 
