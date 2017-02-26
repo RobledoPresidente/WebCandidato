@@ -34,7 +34,7 @@
       <a class="navbar-brand" href="#"><img src="img/logo-s.png"></a>
 
       <div class="collapse navbar-collapse">
-        <ul class="navbar-nav m-auto">
+        <ul class="navbar-nav m-auto main-menu">
           <li class="nav-item active">
             <a class="nav-link" href="#">conózcalo <span class="sr-only">(current)</span></a>
           </li>
@@ -42,13 +42,13 @@
             <a class="nav-link" href="#">biblioteca</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">prensa</a>
+            <a class="nav-link" href="#">prensa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">agenda</a>
+            <a class="nav-link" href="#">agenda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">voluntarios</a>
+            <a class="nav-link" href="#">voluntarios</a>
           </li>
         </ul>
         <ul class="navbar-nav social">
@@ -85,13 +85,18 @@
   </header>
   <!--End Header-->
   <div class="container-fluid" id="main">
+    <div class="section mb-5" id="infografia">
+      <img src="img/infografia.png" class="img-fluid">
+    </div>
     <div class="section">
-      <h2><span>primera plana</span></h2>
       <div class="row mb-5 justify-content-center">
         <div class="col-md-6 text-center">
           <img class="img-fluid" src="img/especial.png">
         </div>
       </div>
+    </div>
+    <div class="section">
+      <h2><span>primera plana</span></h2>
       <div class="row highlights">
         <div class="col-md-5">
           <div class="card card-inverse" style="background-image: url(http://www.elpais.com.co/elpais/sites/default/files/2013/10/colp_031061_acd9c_0.jpg)">
@@ -106,7 +111,7 @@
         </div>
         <div class="col-sm-6 col-md-4 no-gutters">
           <div class="card card-inverse card-primary">
-            <div class="card-content middle">
+            <div class="card-content middle text-center">
               <h4 class="card-title text-uppercase">Todo sobre la audiencia pública</h4>
               <h5 class="card-title">#SalvemosLaPescaArtesanal</h5>
             </div>
@@ -154,11 +159,19 @@
         </div>
       </div>
     </div>
-    <div class="section">
+    <div class="section" id="volunteers">
       <h2><span>voluntarios</span></h2>
       <div class="row">
-        <div class="col-md-8"></div>
-        <div class="col-md-4">
+        <div class="col-md-9 text-center">
+          <div class="link">
+            <a href="/voluntarios">
+              <img src="img/voluntarios.png" class="img-fluid">
+              <h3>Sea Voluntario</h3>
+            </a>
+          </div>
+          <p class="px-4">Ellos tienen el dinero, pero nosotros tenemos la gente. Si todos quienes visitan este sitio se unen a nuestro proyecto, sin duda vamos a enrutar de nuevo a Colombia.</p>
+        </div>
+        <div class="col-md-3">
           <img id="colombia" src="img/map.png" alt="" usemap="#colombia-regions" class="img-fluid">
           <map name="colombia-regions" id="colombia-regions">
             <area data-key="north" alt="" title="" href="#" shape="poly" coords="3,2,5,76,13,129,84,132,81,170,109,171,132,150,160,179,186,154,185,113,253,104,262,1" />
