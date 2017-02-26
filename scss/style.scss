@@ -9,6 +9,7 @@ $input-btn-border-width: 2px;
 
 //Custom variables
 $brand-secondary: #3FA9F5;
+$brand-secondary: #3f6df5;
 $brand-tertiary: #FF1D25;
 $font-secondary: 'Fjalla One', sans-serif;
 
@@ -145,6 +146,35 @@ textarea.form-control {
     font-family: $font-secondary;
 }
 
+.btn {
+    cursor: pointer;
+    font-family: 'aaux_nextsemibold';
+    font-size: 20px;
+
+    &.btn-secondary {
+        background-color: $brand-secondary;
+        color: white;
+        border-color: $brand-secondary;
+        box-shadow: 2px 2px 0 #0061e3;
+
+        &:hover {
+            color: white;
+            background-color: #0061e3;
+            border-color: #0061e3;
+        }
+    }
+
+    &.btn-tertiary {
+        background-color: $brand-tertiary;
+        color: white;
+        box-shadow: 2px 2px 0 #a80900;
+
+        &:hover {
+            background-color: #a80900;
+        }
+    }
+}
+
 //Custom styles
 
 body {
@@ -171,7 +201,12 @@ body {
 }
 
 a {
+    color: initial;
     text-decoration: none !important;
+
+    &:hover {        
+        color: initial;
+    }
 }
 
 header {
@@ -196,7 +231,7 @@ header {
             left: 50%;
             margin-right: -50%;
             transform: translate(-50%, -50%);
-            height: 13vw;
+            height: 15vw;
             margin-top: .5vw;
         }
     }
@@ -249,9 +284,12 @@ header {
         
         img {
             width: 3vw;
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
 
             &:hover {
-                width: 3.2vw;
+                -webkit-filter: initial; /* Safari 6.0 - 9.0 */
+                filter: initial;
             }
         }
     }
@@ -356,8 +394,8 @@ header {
                 .card-title {
                     font-family: $font-secondary;
                     text-transform: uppercase;
-                    line-height: 40px;
-                    font-size: 30px;
+                    line-height: 50px;
+                    font-size: 35px;
 
                     @include media-breakpoint-down(md) {                    
                         font-size: 25px;
