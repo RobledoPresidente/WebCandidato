@@ -11,6 +11,7 @@ $input-btn-border-width: 2px;
 $brand-secondary: #3FA9F5;
 $brand-secondary: #3f6df5;
 $brand-tertiary: #FF1D25;
+$brand-quaternary: #f45d22;
 $font-secondary: 'Fjalla One', sans-serif;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
@@ -62,7 +63,7 @@ $fa-font-path: "../lib/components-font-awesome/fonts" !default;
     }
 
     .card-img-overlay {
-        background-color: rgba(0,0,0,.3);
+        background-color: rgba(0,0,0,.4);
     }
 
     .card-content {
@@ -159,24 +160,37 @@ textarea.form-control {
     cursor: pointer;
     font-family: 'aaux_nextsemibold';
     font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    &.btn-primary {
+        color: $gray;
+        border-color: $brand-primary;
+        box-shadow: 3px 3px 0 #d5bb00;
+
+        &:hover {
+            background-color: #d5bb00;
+            border-color: #d5bb00;
+        }
+    }
 
     &.btn-secondary {
         background-color: $brand-secondary;
         color: white;
         border-color: $brand-secondary;
-        box-shadow: 2px 2px 0 #0061e3;
+        box-shadow: 3px 3px 0 #003bae;
 
         &:hover {
             color: white;
-            background-color: #0061e3;
-            border-color: #0061e3;
+            background-color: #003bae;
+            border-color: #003bae;
         }
     }
 
     &.btn-tertiary {
         background-color: $brand-tertiary;
         color: white;
-        box-shadow: 2px 2px 0 #a80900;
+        box-shadow: 3px 3px 0 #a80900;
 
         &:hover {
             background-color: #a80900;
@@ -213,6 +227,26 @@ a {
     text-decoration: none !important;
 }
 
+.scratchpad {
+    height: 25vw;
+    background-image: url(../img/especial-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+    &.done {
+        cursor: pointer;
+
+        canvas {
+            display: none;
+        }
+    }
+    img, canvas {
+        left: 0;
+        top: 0;
+    }
+}
+
 header {
     position: fixed;
     top: 0;
@@ -223,6 +257,7 @@ header {
 
     #header-img {
         background-image: url(../img/header.jpg);
+        background-image: url(../img/header.jpg), linear-gradient(to right, $brand-primary 0%,$brand-primary 50%, $brand-secondary 50%,$brand-secondary 75%, $brand-tertiary 75%,$brand-tertiary 100%);
         background-position: center center;
         background-size: cover;
         height: 25vw;
@@ -242,10 +277,11 @@ header {
 
     .navbar {
         background-color: white;
-        background-image: url(../img/header-line.png);
+        /*background-image: url(../img/header-line.png);
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 100%;*/
         padding-top: 1rem;
+        padding-bottom: 1rem;
 
         .navbar-brand { 
             display: none;
@@ -300,7 +336,7 @@ header {
 }
 
 #main {
-    margin-top: 86px;
+    margin-top: 6vw;
 }
 
 #infografia {
@@ -321,6 +357,7 @@ header {
             .card-title {
                 font-size: 64px;
                 font-weight: lighter;
+                line-height: 50px;
             }
         }
 
@@ -368,6 +405,56 @@ header {
     }
 }
 
+#qp_all996896 {
+    font-family: 'aaux_next_regularregular' !important;
+
+    > div > div {
+        background-color: white !important;
+        color: black !important;
+        font-family: 'aaux_next_regularregular' !important;
+    }
+
+    form {
+
+        > div > div {
+            margin: 0 !important;
+            padding: 5px !important;
+        }
+    }
+
+    input[btype=v], input[btype=r] {
+        color: white !important;
+        font-weight: bold !important;
+        font-size: 18px !important;
+
+        &:hover {
+            color: white !important;
+        }
+    }
+
+    input[btype=v] {
+        background-color: $brand-primary !important;
+        border-color: $brand-primary !important;
+        box-shadow: 3px 3px 0 #d5bb00 !important;
+
+        &:hover {
+            background-color: #d5bb00 !important;
+            border-color: #d5bb00 !important;
+        }
+    }
+
+    input[btype=r] {
+        background-color: $gray !important;
+        border-color: $gray !important;
+        box-shadow: 3px 3px 0 $gray-dark !important;
+
+        &:hover {
+            background-color: $gray-dark;
+            border-color: $gray-dark;
+        }
+    }
+}
+
 #volunteers {
 
     .link {
@@ -398,7 +485,7 @@ header {
                     font-family: $font-secondary;
                     text-transform: uppercase;
                     line-height: 50px;
-                    font-size: 35px;
+                    font-size: 32px;
 
                     @include media-breakpoint-down(md) {                    
                         font-size: 25px;
@@ -406,5 +493,139 @@ header {
                 }
             }
         }
+    }
+}
+
+.video {
+
+    .highlight {
+        color: white;
+    }
+}
+
+#feed {
+
+    .card {
+        background-color: #1da1f2;
+        margin-bottom: 15px;
+        padding: 15px;
+
+        &.rt {
+            background-color: $brand-quaternary;
+        }
+
+        .user {
+
+            > div {
+
+                a {
+                    display: table;
+
+                    span:first-child {
+                        display: table-cell;
+                        padding-right: 10px;
+
+                        img {
+                            border-radius: 50%;
+                            border: 2px solid white;
+                        }
+                    }
+                }
+
+                span:nth-child(2), span:nth-child(2) > * {
+                    color: white;
+                    font-weight: bold;
+                    display: block;
+                }
+
+                span:nth-child(3), span:nth-child(4) {
+                    font-size: 14px;
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .tweet {
+            overflow: hidden;
+            margin: 0;
+            padding-top: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .timePosted {
+            text-align: right;
+            padding-right: 10px;
+            padding-bottom: 5px;
+            margin-bottom: 0;
+
+            a {
+                font-weight: bold;
+                font-size: 14px;
+                color: white;
+            }
+        }
+
+        .media {
+            display: none;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+footer a {
+    color: white;
+}
+
+@include media-breakpoint-down(xs) {
+
+    .btn, input[btype=v], input[btype=r] {
+        margin-top: 10px;
+    }
+    
+    body {
+        padding-top: 114vw;
+
+        &.sticky {
+            padding-top: 26vw;
+
+            header .navbar-brand img {
+                height: 15vw;
+            }
+        }
+    }
+
+    header { 
+
+        #header-img {
+            height: 100vw;
+            background-image: url(../img/header-s.jpg);
+            background-size: contain;
+
+            img.biglogo {
+                height: 35vw;
+            }
+        }
+
+        .navbar {
+            //background-image: url(../img/header-line-s.png);
+            margin-top: -1vw;
+        }
+    }
+
+    .especial {
+        background-size: cover;
+    }
+
+    .scratchpad {
+        height: 28vw;
+    }
+
+    #volunteers h3 {
+        font-size: 11vw;
     }
 }

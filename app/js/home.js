@@ -65,4 +65,73 @@ $(function () {
             $('#colombia').mapster('resize', $('#mapster_wrap_0').width());
         }, 200);
     });
+
+    //Twitter
+    var nTweets = 6;
+
+    var twitter = function () {
+
+        $('#feed').append('<h4 class="text-center p-3 loading">Cargando...</h4>');
+
+        var configProfile = {
+            "profile": {"screenName": 'JERobledo'},
+            "domId": '',
+            "maxTweets": nTweets,
+            "enableLinks": true, 
+            "showUser": true,
+            "showTime": true,
+            "showImages": true,
+            "customCallback": handleTweets,
+            "showInteraction": false,
+            "dataOnly": true,
+            "lang": 'es'
+        };
+        twitterFetcher.fetch(configProfile);
+    }
+
+    twitter();
+
+    $('#feed .more').click(function () {
+        
+        $('#feed > .card-columns').empty();
+
+        nTweets =  nTweets + 6;
+
+        twitter();
+    })
+
+    $('#scratchcard').wScratchPad({
+        size: $(window).width() / 30,
+        bg: 'img/especial-odebrecht.png',
+        fg: 'img/especial-raspe.png',
+        'cursor': 'url("./img/coin.png") 5 5, default',
+        scratchMove: function (e, percent) {
+
+            if (percent > 95) {
+
+                $('#scratchcard').addClass('done');
+
+                location.href = 'http://jorgerobledo.com';
+            }
+        }
+    });
 })
+
+function handleTweets(tweets) {
+
+    var x = tweets.length;
+    var n = 0;
+
+    var row = $('#feed > .card-columns');
+
+    while (n < x) {
+
+        if (tweets[n].image)
+            row.append('<div class="card' + (tweets[n].author.indexOf('https://twitter.com/JERobledo') < 0 ? ' rt' : '') + '"><div class="card-image-header" style="background-image: url(img/posts/impuestos.png)"><div class="card-img-overlay"><div class="user">' + tweets[n].author + '</div><div class="tweet">' + tweets[n].tweet + '</div><p class="timePosted"><a href="' + tweets[n].permalinkURL + '">' + tweets[n].time + '</div></div></div>')
+        else
+        row.append('<div class="card' + (tweets[n].author.indexOf('https://twitter.com/JERobledo') < 0 ? ' rt' : '') + '"><div class="user">' + tweets[n].author + '</div><div class="tweet">' + tweets[n].tweet + '</div><p class="timePosted"><a href="' + tweets[n].permalinkURL + '">' + tweets[n].time + '</div></div>');
+      n++;
+    }
+
+    $('#feed .loading').remove();
+}
