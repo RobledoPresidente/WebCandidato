@@ -111,7 +111,7 @@ $(function () {
 
                 $('#scratchcard').addClass('done');
 
-                location.href = 'http://jorgerobledo.com';
+                location.href = 'http://jorgerobledo.com/el-puente-esta-quebrado-por-que-porque-se-lo-robaron/';
             }
         }
     });
@@ -127,7 +127,7 @@ function handleTweets(tweets) {
     while (n < x) {
 
         if (tweets[n].image)
-            row.append('<div class="card' + (tweets[n].author.indexOf('https://twitter.com/JERobledo') < 0 ? ' rt' : '') + '"><div class="card-image-header" style="background-image: url(img/posts/impuestos.png)"><div class="card-img-overlay"><div class="user">' + tweets[n].author + '</div><div class="tweet">' + tweets[n].tweet + '</div><p class="timePosted"><a href="' + tweets[n].permalinkURL + '">' + tweets[n].time + '</div></div></div>')
+            row.append('<div class="card' + (tweets[n].author.indexOf('https://twitter.com/JERobledo') < 0 ? ' rt' : '') + '"><div class="card-image-header" style="background-image: url(' + tweets[n].image + ')"><div class="card-img-overlay"><div class="user">' + tweets[n].author + '</div><div class="tweet">' + tweets[n].tweet + '</div><p class="timePosted"><a href="' + tweets[n].permalinkURL + '">' + tweets[n].time + '</div></div></div>')
         else
         row.append('<div class="card' + (tweets[n].author.indexOf('https://twitter.com/JERobledo') < 0 ? ' rt' : '') + '"><div class="user">' + tweets[n].author + '</div><div class="tweet">' + tweets[n].tweet + '</div><p class="timePosted"><a href="' + tweets[n].permalinkURL + '">' + tweets[n].time + '</div></div>');
       n++;

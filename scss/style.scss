@@ -581,17 +581,38 @@ footer a {
     color: white;
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
+
+    .navbar-nav.social {
+        flex-direction: row;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+    
+    .collapse {
+        display: block !important;
+    }
+
+    header .social img {
+        width: 6vw;
+    }
+
+    header .navbar .main-menu li a.nav-link {
+        font-size: 10vw;
+        line-height: 10vw;
+    }
 
     .btn, input[btype=v], input[btype=r] {
         margin-top: 10px;
     }
     
     body {
-        padding-top: 114vw;
+        padding-top: 147vw;
 
         &.sticky {
-            padding-top: 26vw;
+            padding-top: 76vw;
 
             header .navbar-brand img {
                 height: 15vw;
