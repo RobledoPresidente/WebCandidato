@@ -49,10 +49,6 @@ $fa-font-path: "../lib/components-font-awesome/fonts" !default;
         }
     }
 
-    &.card-calm {
-        background-color: $brand-calm;
-    }
-
     .card-image-header {
         position: relative;
         height: 25vw;
@@ -87,6 +83,15 @@ $fa-font-path: "../lib/components-font-awesome/fonts" !default;
     }
 }
 
+a.card {
+    
+    color: initial;
+
+    &:hover {        
+        color: initial;
+    }
+}
+
 textarea.form-control {
     background-color: transparent;
 
@@ -97,6 +102,10 @@ textarea.form-control {
 
 .list-group-item-action.bg-inverse {
     color: $brand-calm;
+}
+
+.bg-calm {
+    background-color: $brand-calm;
 }
 
 .bg-secondary {
@@ -201,12 +210,7 @@ body {
 }
 
 a {
-    color: initial;
     text-decoration: none !important;
-
-    &:hover {        
-        color: initial;
-    }
 }
 
 header {
@@ -389,7 +393,6 @@ header {
             padding-bottom: 15px;
 
             .card {
-                background-color: $brand-calm;
 
                 .card-title {
                     font-family: $font-secondary;
