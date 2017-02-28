@@ -30,77 +30,27 @@
   ga('send', 'pageview');
 
 </script>
+<style>
+body, body.sticky {
+padding-top: 0;
+}
+#main {
+    margin-top: 0;
+}
+</style>
 </head>
 
 <body>
-  <!--Header-->
-  <header>
-    <div id="header-img">
-      <a href="/"><img class="biglogo" src="img/logo.png"></a>
-    </div>
-    <nav class="navbar navbar-toggleable-sm navbar-light">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="/"><img src="img/logo-s.png"></a>
-
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav m-auto main-menu">
-          <li class="nav-item active">
-            <a class="nav-link" href="biografia.pdf" target="_blank">conózcalo <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="biblioteca.html">biblioteca</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="prensa.html">prensa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://jorgerobledo.com/voluntarios">voluntarios</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav social">
-          <li class="nav-item">
-            <a class="nav-link" href="https://es-la.facebook.com/jorge.robledo.castillo/"><img src="img/social-facebook.png"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/jerobledo?lang=es"><img src="img/social-twitter.png"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/jorgerobledo2018/"><img src="img/social-instagram.png"></a>
-          </li>
-          <!--<li class="nav-item">
-            <a class="nav-link" href="#"><img src="img/social-snapchat.png"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><img src="img/social-whatsapp.png"></a>
-          </li>-->
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.youtube.com/user/ROBLEDOTELEVISION"><img src="img/social-youtube.png"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://soundcloud.com/prensa-jorge-enrique-robledo"><img src="img/social-soundcloud.png"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://plus.google.com/100711622690849831280"><img src="img/social-google+.png"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/jorge-robledo/"><img src="img/social-linkedin.png"></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!--End Header-->
   
     <div class="container-fluid text-center" id="main">
-      <br>
-        <br>
+      <div class="text-center" style="margin-bottom: 5px">
+          <a class="btn btn-tertiary"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</a>
+      </div>
         <canvas id="memecanvas">
             Sorry, canvas not supported
         </canvas>
         <div>
-          Tu mensaje: <textarea type="text" rows="2" id="bottom-text"></textarea>
+          Tu mensaje: <textarea type="text" rows="2" id="meme-text"></textarea>
         </div>
         <br>
 

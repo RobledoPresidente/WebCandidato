@@ -189,7 +189,7 @@ textarea.form-control {
 
     &.btn-tertiary {
         background-color: $brand-tertiary;
-        color: white;
+        color: white !important;
         box-shadow: 3px 3px 0 #a80900;
 
         &:hover {

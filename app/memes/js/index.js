@@ -8,7 +8,7 @@ canvas.width = memeSize;
 canvas.height = memeSize;
 
 //  Grab the nodes
-var bottomText = document.getElementById('bottom-text');
+var bottomText = document.getElementById('meme-text');
 
 var update = function () {
 
@@ -26,7 +26,7 @@ bottomText.addEventListener('change', update)
 
 function drawMeme(img) {
 
-    var bottomText = $('#bottom-text').val();
+    var bottomText = $('#meme-text').val();
     
     if (!bottomText)
         bottomText = ' ';
@@ -51,7 +51,7 @@ function drawMeme(img) {
     ctx.font = '15pt sans-serif';
 
     ctx.textBaseline = 'bottom';
-    var text2 = document.getElementById('bottom-text').value;
+    var text2 = document.getElementById('meme-text').value;
     text2 = text2.toUpperCase();
     y = memeSize;
 
@@ -102,8 +102,8 @@ document.getElementById('download').addEventListener('click', function () {
 
 $(function() {   
 
-    if (!$('#bottom-text').val())
-        $('#bottom-text').val(location.hash.replace('#', ''));        
+    if (!$('#meme-text').val())
+        $('#meme-text').val(location.hash.replace('#', ''));        
 
     update();
 
