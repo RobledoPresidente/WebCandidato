@@ -577,8 +577,11 @@ header {
     }
 }
 
-footer a {
-    color: white;
+footer { 
+    clear: both;
+    a {
+        color: white;
+    }
 }
 
 @include media-breakpoint-down(sm) {

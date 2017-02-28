@@ -1,0 +1,10 @@
+img {
+  left: -10000px;
+  top: -10000px;
+  position: absolute;
+}
+
+body {
+  text-align: center;
+  padding-top: 50px !important;
+}
