@@ -617,8 +617,12 @@ footer {
         &.sticky {
             padding-top: 76vw;
 
-            header .navbar-brand img {
-                height: 15vw;
+            header { 
+                position: absolute;
+                
+                .navbar-brand img {
+                    height: 15vw;
+                }
             }
         }
     }

@@ -68,7 +68,7 @@ function twitt() {
                         
                         if (validateReply(reply)) {
 
-                            alert("Tu foto se ha trinado exitosamente");
+                            alert("Tu trino se ha enviado exitosamente");
             
                             ga('send', 'event', m !== undefined ? 'meme' : 'tweet', 'click', 'twitter', {'nonInteraction': 1, 'page': m !== undefined ? '/memes.html' : '/'});  
                             console.log('Event sent: share twitter'); 

@@ -8,8 +8,12 @@
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="memes/css/style.css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <meta property="og:url"                content="http://jorgerobledo.co/memes.html" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Crea tu meme | JorgeRobledo.co" />
+    <meta property="og:description"        content="Candidato presidencial y senador por el Polo Democrático Alternativo. En la última elección alcanzó 196.500 votos, convirtiéndose en el congresista más votado del país. Ha sido elegido en cinco ocasiones consecutivas como el Mejor Senador de Colombia por los líderes de opinión de Cifras y Conceptos." />
+  <meta property="og:image"              content="http://jorgerobledo.co/img/meta.jpg" />
   <script type="text/javascript" src="js/codebird.js"></script>
   <script>
       var cb = new Codebird;        
@@ -29,32 +33,85 @@
 </head>
 
 <body>
-    <div class="text-center"><a class="btn btn-secondary" href="/"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</a></div>
-    <br>
-    <br>
-    <canvas id="memecanvas">
-        Sorry, canvas not supported
-    </canvas>
+  <!--Header-->
+  <header>
+    <div id="header-img">
+      <a href="/"><img class="biglogo" src="img/logo.png"></a>
+    </div>
+    <nav class="navbar navbar-toggleable-sm navbar-light">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img src="img/logo-s.png"></a>
 
-    <img id="start-image" src="memes/images/mem2.jpg" alt="" />
-    <div>
-        <!--<select name="imageList" onchange="displayImage(this);">
-            <option value="images/mem2.jpg">Meme 1</option>
-            <option value="images/mem3.jpg">Meme 2</option>
-            <option value="images/mem4.jpg">Meme 3</option>
-            <option value="images/mem5.jpg">Meme 4</option>
-            <option value="images/mem6.jpg">Meme 5</option>
-
-
-        </select>-->
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav m-auto main-menu">
+          <li class="nav-item active">
+            <a class="nav-link" href="biografia.pdf" target="_blank">conózcalo <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="biblioteca.html">biblioteca</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="prensa.html">prensa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://jorgerobledo.com/voluntarios">voluntarios</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav social">
+          <li class="nav-item">
+            <a class="nav-link" href="https://es-la.facebook.com/jorge.robledo.castillo/"><img src="img/social-facebook.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/jerobledo?lang=es"><img src="img/social-twitter.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/jorgerobledo2018/"><img src="img/social-instagram.png"></a>
+          </li>
+          <!--<li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-snapchat.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="img/social-whatsapp.png"></a>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/user/ROBLEDOTELEVISION"><img src="img/social-youtube.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://soundcloud.com/prensa-jorge-enrique-robledo"><img src="img/social-soundcloud.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://plus.google.com/100711622690849831280"><img src="img/social-google+.png"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/jorge-robledo/"><img src="img/social-linkedin.png"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!--End Header-->
+  
+    <div class="container-fluid text-center" id="main">
+      <br>
         <br>
+        <canvas id="memecanvas">
+            Sorry, canvas not supported
+        </canvas>
+        <div>
+          Tu mensaje: <textarea type="text" rows="2" id="bottom-text"></textarea>
+        </div>
         <br>
 
-        <input type='text' value='#RobledoCandidatoPolo' id='top-text' />
-        <input type='text' value=' ' id='bottom-text' />
+        <div class="row opciones">
+            <div class="col p-0"><img src="memes/images/positivo1.jpg" data-id="memes/images/positivo1.jpg" class="img-fluid selected" width="200"></div>
+            <div class="col p-0"><img src="memes/images/positivo2.jpg" data-id="memes/images/positivo2.jpg" class="img-fluid" width="200"></div>
+            <div class="col p-0"><img src="memes/images/positivo3.jpg" data-id="memes/images/positivo3.jpg" class="img-fluid" width="200"></div>
+            <div class="col p-0"><img src="memes/images/positivo4.jpg" data-id="memes/images/positivo4.jpg" class="img-fluid" width="200"></div>
+            <div class="col p-0"><img src="memes/images/positivo5.jpg" data-id="memes/images/positivo5.jpg" class="img-fluid" width="200"></div>
+        </div>
         <br>
-        <br>
-
         <div class="text-center">
             <a id="download" class="btn btn-tertiary"><i class="fa fa-download" aria-hidden="true"></i> Descargar</a>
             <button class="btn btn-secondary" id="share-twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Trinar</button>
@@ -107,6 +164,7 @@
     <script src="js/tether.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script src="js/twitter.js" type="text/javascript"></script> 
+    <script src="js/header.js" type="text/javascript"></script>   
 </body>
 
 </html>
