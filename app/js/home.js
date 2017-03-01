@@ -118,13 +118,53 @@ function handleTweets(tweets) {
 
     var row = $('#feed > .card-columns');
 
+    var periscope;
+
     while (n < x) {
 
         if (tweets[n].image)
             row.append('<div class="card' + (tweets[n].author.indexOf('https://twitter.com/JERobledo') < 0 ? ' rt' : '') + '"><div class="card-image-header" style="background-image: url(' + tweets[n].image + ')"><div class="card-img-overlay"><div class="user">' + tweets[n].author + '</div><div class="tweet">' + tweets[n].tweet + '</div><p class="timePosted"><a href="' + tweets[n].permalinkURL + '">' + tweets[n].time + '</div></div></div>')
-        else
-        row.append('<div class="card' + (tweets[n].author.indexOf('https://twitter.com/JERobledo') < 0 ? ' rt' : '') + '"><div class="user">' + tweets[n].author + '</div><div class="tweet">' + tweets[n].tweet + '</div><p class="timePosted"><a href="' + tweets[n].permalinkURL + '">' + tweets[n].time + '</div></div>');
-      n++;
+        else {
+
+            var content; 
+
+            if (tweets[n].tweet.indexOf('https://www.periscope.tv/') > 0) {
+
+                var element = $('<div>' + tweets[n].tweet + '</div>');  
+
+                var link = element.find("[rel='nofollow noopener']");
+
+                element.append('<a href="' + link.data('expanded-url') + '"><img src="http://www.robledopresidente.elchapin.co/img/periscope.png" class="img-fluid"></a>');
+
+                link.remove();
+
+                content = element.html();
+            }
+            else if (tweets[n].tweet.indexOf('youtube.com') > 0 || tweets[n].tweet.indexOf('youtu.be') > 0) {
+
+                var element = $('<div>' + tweets[n].tweet + '</div>');  
+
+                var link = element.find("[rel='nofollow noopener']");
+
+                var vid;
+
+                if (tweets[n].tweet.indexOf('youtube.com'))
+                    vid = link.data('expanded-url').replace('https://www.youtube.com/watch?v=', '');
+                else
+                    vid = link.data('expanded-url').replace('https://youtu.be/', '');
+
+                element.append('<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="http://www.youtube.com/embed/' + vid + '" allowfullscreen=""></iframe></div>');
+
+                link.remove();
+
+                content = element.html();
+            }
+            else
+                content = tweets[n].tweet;
+
+            row.append('<div class="card' + (tweets[n].author.indexOf('https://twitter.com/JERobledo') < 0 ? ' rt' : '') + '"><div class="user">' + tweets[n].author + '</div><div class="tweet">' + content + '</div><p class="timePosted"><a href="' + tweets[n].permalinkURL + '">' + tweets[n].time + '</div></div>');
+        }
+        n++;
     }
 
     hideLoading();
