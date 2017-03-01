@@ -68,7 +68,7 @@ function twitt() {
                     "statuses_update",
                     { 
                         "media_ids": m ? reply.media_id_string : '',
-                        "status": '#RobledoCandidatoPolo ' + $('#meme-text').val() + ' http://jorgerobledo.co/'
+                        "status": hashtag + ' ' + $('#meme-text').val() + ' http://jorgerobledo.co/'
                     },
                     function (reply, rate, err) {
                         

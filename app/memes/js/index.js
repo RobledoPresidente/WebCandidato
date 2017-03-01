@@ -42,11 +42,10 @@ function drawMeme(img) {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
 
-    var text1 = '#RobledoCandidatoPolo';
     x = memeSize / 2;
     y = 10;
 
-    wrapText(ctx, text1, x, y, 300, 28, false);
+    wrapText(ctx, hashtag, x, y, 300, 28, false);
 
     ctx.font = '15pt sans-serif';
 

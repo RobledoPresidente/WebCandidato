@@ -1,5 +1,7 @@
 $(function () {    
 
+    $('#hashtag').html(hashtag);
+
     var mapster = function () {
 
         //$('#colombia').mapster('resize');

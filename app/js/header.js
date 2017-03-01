@@ -1,3 +1,5 @@
+var hashtag = '#RobledoPresidente2018';
+
 $(function () {
 
     $(window).scroll(function() {
