@@ -58,6 +58,8 @@ $(function () {
 
     var twitter = function () {
 
+        showLoading();
+
         $('#feed').append('<h4 class="text-center p-3 loading">Cargando...</h4>');
 
         var configProfile = {
@@ -124,6 +126,8 @@ function handleTweets(tweets) {
         row.append('<div class="card' + (tweets[n].author.indexOf('https://twitter.com/JERobledo') < 0 ? ' rt' : '') + '"><div class="user">' + tweets[n].author + '</div><div class="tweet">' + tweets[n].tweet + '</div><p class="timePosted"><a href="' + tweets[n].permalinkURL + '">' + tweets[n].time + '</div></div>');
       n++;
     }
+
+    hideLoading();
 
     $('#feed .loading').remove();
 }

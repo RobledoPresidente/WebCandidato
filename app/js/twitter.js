@@ -4,6 +4,8 @@ $(function () {
         
         e.preventDefault();
 
+        showLoading();
+
         var oauth_token = localStorage.getItem("twitter_oauth_token");
         var oauth_token_secret = localStorage.getItem("twitter_oauth_token_secret");
         
@@ -29,6 +31,8 @@ function twitter_oauth_accessToken(oauth_verifier) {
         },
         function (reply, rate, err) {
             
+            hideLoading();
+            
             if (err) {
                 console.log("error response or timeout exceeded" + err.error);
             }
@@ -42,6 +46,8 @@ function twitter_oauth_accessToken(oauth_verifier) {
 }
 
 function twitt() {
+    
+    showLoading();
 
     var params = {};
 
@@ -81,6 +87,8 @@ function twitt() {
 }
 
 function validateReply(reply) {
+    
+    hideLoading();
                         
     console.log(reply);
     
@@ -103,7 +111,9 @@ function validateReply(reply) {
 
 
     
-function oauth_requestToken() {
+function oauth_requestToken() {  
+                        
+    showLoading();
     
     cb.__call(
         "oauth_requestToken", {
