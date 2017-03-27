@@ -13,6 +13,46 @@ $(function () {
             $('body').removeClass("sticky");
             $('#header-img').slideDown('slow');
         }
+    });    
+
+    $('.share li').click(function (event) {
+
+        event.preventDefault();
+        
+        var network = $(this).data('network');
+        var dataParent = $(this).closest('.share').data();
+        
+        ga('send', 'event', 'social-share', 'click', network, {'nonInteraction': 1 });
+
+        switch (network) {
+            case 'twitter':
+                popup('https://twitter.com/intent/tweet', {
+                    text: dataParent.title + ' | vía @JERobledo',
+                    url: dataParent.url
+                });
+                break;
+            case 'facebook':
+                popup('https://www.facebook.com/sharer/sharer.php', {
+                    u: dataParent.url
+                });
+                break;
+            case 'google':
+                popup('https://plus.google.com/share', {
+                    url: dataParent.url
+                });
+                break;
+            case 'email':
+                popup('mailto:', {
+                    subject: dataParent.title + ' | jorgerobledo.co',
+                    body: 'Recomiendo esto que encontré en la página de Jorge Robledo ' + dataParent.url
+                });
+                break;
+            case 'whatsapp':
+                popup('whatsapp://send', {
+                    text: dataParent.title + ' | vía @JERobledo ' + dataParent.url,
+                });
+                break;
+        }
     });
 });
 
@@ -53,3 +93,35 @@ function hideLoading() {
     $('#loading').hide().spin(false);
 }
   
+function popup(url, params, newTab) {
+    
+    var k, popup, qs, v;
+    
+    if (params == null)
+        params = {};
+        
+    popup = {
+        width: 600,
+        height: 350
+    };
+    
+    popup.top = (screen.height / 2) - (popup.height / 2);
+    popup.left = (screen.width / 2) - (popup.width / 2);
+    
+    qs = ((function() {
+        
+        var _results;
+        _results = [];
+        for (k in params) {
+            
+            v = params[k];
+            _results.push("" + k + "=" + (encodeURIComponent(v)));
+        }
+        return _results;
+    }).call(this)).join('&');
+    
+    if (qs)
+        qs = "?" + qs;
+    
+    return window.open(url + qs, 'targetWindow', newTab ? '' : "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,left=" + popup.left + ",top=" + popup.top + ",width=" + popup.width + ",height=" + popup.height);
+}

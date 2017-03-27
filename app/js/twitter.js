@@ -146,36 +146,3 @@ function oauth_requestToken() {
         }
     });
 }
-
-function popup(url, params, newTab) {
-    
-    var k, popup, qs, v;
-    
-    if (params == null)
-        params = {};
-        
-    popup = {
-        width: 600,
-        height: 350
-    };
-    
-    popup.top = (screen.height / 2) - (popup.height / 2);
-    popup.left = (screen.width / 2) - (popup.width / 2);
-    
-    qs = ((function() {
-        
-        var _results;
-        _results = [];
-        for (k in params) {
-            
-            v = params[k];
-            _results.push("" + k + "=" + (encodeURIComponent(v)));
-        }
-        return _results;
-    }).call(this)).join('&');
-    
-    if (qs)
-        qs = "?" + qs;
-    
-    return window.open(url + qs, 'targetWindow', newTab ? '' : "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,left=" + popup.left + ",top=" + popup.top + ",width=" + popup.width + ",height=" + popup.height);
-}
